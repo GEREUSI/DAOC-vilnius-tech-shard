@@ -1,0 +1,3 @@
+[submodule "DOLSharp"]
+	path = DOLSharp
+	url = git@github.com:GEREUSI/DOLSharp.git
