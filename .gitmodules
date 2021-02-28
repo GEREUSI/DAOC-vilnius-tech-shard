@@ -1,3 +1,6 @@
 [submodule "DOLSharp"]
 	path = DOLSharp
 	url = git@github.com:GEREUSI/DOLSharp.git
+[submodule "db-public"]
+	path = db-public
+	url = git@github.com:GEREUSI/db-public.git
