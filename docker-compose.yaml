@@ -16,7 +16,21 @@ services:
   
   adminer:
     image: adminer
-    restart: always
+    restart: unless-stopped
+    container_name: daoc-adminer
     ports:
       - 8080:8080
 
+  daoc-server:
+    build:
+      ./DOLSharp
+    container_name: daoc-server
+    depends_on:
+      - database
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./DOLSharp/Debug:/app
+    ports:
+      - 10300:10300
