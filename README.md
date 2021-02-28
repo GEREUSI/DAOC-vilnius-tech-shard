@@ -24,7 +24,9 @@ Runs concat script on the database and copies the resulting .SQL file to /data f
 
 #### db-apply.sh
 ```
-Applies .SQL files that had not been applied to the database. Applied filenames are saved in .applied file.
+Applies .SQL files in /data that had not been applied to the database. 
+Applied filenames are saved in .applied file.
+Database container has to be running for script to work.
 ```
 
 
