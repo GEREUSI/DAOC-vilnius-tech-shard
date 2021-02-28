@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  database:
+    image: mariadb
+    container_name: ${DATABASE_CONTAINER_NAME}
+    restart: unless-stopped
+    volumes:
+      - ./data:${DB_DATA_CONTAINER_PATH}
+      - ./data/.mysql.d:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
