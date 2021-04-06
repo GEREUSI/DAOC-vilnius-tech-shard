@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /app
-msbuild /t:restore
+msbuild -t:restore
 msbuild
 
 chmod -R 777 /app/Debug
