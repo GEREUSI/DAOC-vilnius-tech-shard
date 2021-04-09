@@ -10,9 +10,9 @@ if [ ! "$(docker ps -a | grep ${DATABASE_CONTAINER_NAME})" ]; then
 fi
 
 APPLIED="$MIGRATIONS_FOLDER/.applied"
+touch $APPLIED
 
 APPLICATIONS=$(ls $MIGRATIONS_FOLDER | grep -v -f $APPLIED)
-
 echo "Applying following migrations:"
 for APPLICATION in $APPLICATIONS; do
     echo "$MIGRATIONS_FOLDER/$APPLICATION"

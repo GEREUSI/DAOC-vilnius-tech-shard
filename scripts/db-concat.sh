@@ -19,4 +19,5 @@ else
     ./concat --update-only
 fi
 
+mkdir -p $MIGRATIONS_FOLDER
 mv public-db.sql "$MIGRATIONS_FOLDER/migration_$(date -u $MIGRATION_DATE_FORMAT).sql"
